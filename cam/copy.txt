@@ -1,0 +1,15 @@
+#!/bin/bash
+j=0;
+Folder_A="./Result/0/"
+for file in ${Folder_A}/*;do
+    temp_file=`basename $file`
+    new=$((j++))
+    if [ $j -gt 10 ];then
+        mv ./Result/0/$temp_file ./Result/00/"0"$new.pbm
+    else
+        mv ./Result/0/$temp_file ./Result/00/"00"$new.pbm
+    fi
+echo $temp_file
+done
+
+
